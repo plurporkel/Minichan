@@ -38,10 +38,16 @@ if(isset($_SERVER["HTTP_CF_CONNECTING_IP"]) && isset($_SERVER["HTTP_CF_IPCOUNTRY
 }
 
 $_start_time = microtime(); //Prepare our neat xx seconds to load thingy at the bottom of the page.
+require_once('vendor/autoload.php');
 require_once('includes/config.php');
 require_once('includes/database.class.php');
 require_once('includes/functions.php');
 require_once('includes/unicode.php');
+
+use GeoIp2\Database\Reader;
+$reader = new Reader('includes/GeoLite2-Country.mmdb');
+$record = $reader->country('2400:8900::f03c:91ff:fec8:9fb9');
+var_dump($record->country->isoCode);
 
 /*
 if(!$_COOKIE['last_topic']){
