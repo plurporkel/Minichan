@@ -149,6 +149,7 @@ window.onload=function(){
 		'Banned in Iran.'
 		);
 	?>
+    <?php if(!Hooks::template_header()) { ?>
 	<h1 class="top_text" id="logo">
 		<?php 
 			if($administrator||allowed("manage_defcon")) { 
@@ -163,6 +164,7 @@ window.onload=function(){
 			echo "<a rel=\"index\" href=\"".DOMAIN."\" class=\"help_cursor\" title=\"" . $site_slogan[rand(0,count($site_slogan)-1)] . "\">" . SITE_TITLE . $additional . "</a>\n"
 		 ?>
 	</h1>
+    <?php } ?>
 <div id="main_menu_wrapper">
 	<ul id="main_menu" class="menu">
 		<?php

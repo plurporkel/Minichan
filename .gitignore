@@ -1,6 +1,7 @@
 /img
 /thumbs
 /includes/config.php
+/includes/private.php
 /minecraft/
 /dump/
 db.log

@@ -99,8 +99,11 @@ $link = new db($db_info['server'], $db_info['username'], $db_info['password'], $
 
 if(file_exists("includes/private.php")){
 	require("includes/private.php");
+}else{
+    class Hooks {
+        public static function __callStatic($name, $arguments) {}
+    }
 }
-
 
 if($link->getVersion() != DB_VERSION) {
 	abortForMaintenance("Database version mismatch! The Board has likely been upgraded lately, and the administrator has not yet executed includes/upgrade.php");
