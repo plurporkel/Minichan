@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 export DEBIAN_FRONTEND=noninteractive
 
 debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
@@ -31,17 +32,24 @@ function vcp {
   cat "$1" | dos2unix > "$2"
 }
 
+echo 'SUBSYSTEM=="bdi",ACTION=="add",RUN+="/bin/bash /opt/restart-services.sh"' > /etc/udev/rules.d/50-vagrant-mount.rules
+cat <<EOF > /opt/restart-services.sh
+sleep 5 # wait for a bit for NFS to make sure resources are available
+service apache2 restart
+EOF
+chmod +x /opt/restart-services.sh
+
 vcp /vagrant/dev/phpmyadmin.php /etc/phpmyadmin/conf.d/vagrant.php
 vcp /vagrant/dev/minichan.apache /etc/apache2/sites-enabled/minichan.conf
 vcp /vagrant/dev/minichan.mysql /etc/mysql/mysql.conf.d/99-minichan.cnf
 vcp /vagrant/dev/minichan.php.ini /etc/php/7.0/mods-available/99-minichan.ini
 vcp /vagrant/dev/arangod.conf /etc/arangodb3/arangod.conf
-chmod +x /opt/webpack.sh
 
 mkdir -p /vagrant/logs
 phpenmod 99-minichan
 a2enmod rewrite proxy_http
 a2dissite 000-default
+a2disconf javascript-common
 
 if [[ ! -d /root/pecl-database-mysql ]]; then
   (
@@ -70,9 +78,9 @@ fi
 
 [[ ! -f /usr/bin/webpack ]] && npm install -g webpack
 
-echo "CREATE DATABASE tinybbs_dev" | mysql
+echo "CREATE DATABASE tinybbs_dev" | mysql || true
 
-echo -e '#!/bin/bash -x\ncd /vagrant\nnpm --no-dist-links install' > /bin/run-npm
+echo -e '#!/bin/bash -x\ncd /vagrant\nnpm --no-bin-links install' > /bin/run-npm
 echo -e '#!/bin/bash -x\ncd /vagrant\ncomposer install' > /bin/run-composer
 echo -e '#!/bin/bash -x\ncd /vagrant\nwebpack -d' > /bin/run-webpack
 echo -e '#!/bin/bash -x\ncd /vagrant\nphp includes/upgrade.php' > /bin/run-upgrade
@@ -93,7 +101,7 @@ echo '  phpMyAdmin: http://dev.minichan.org/phpmyadmin'
 echo '  ArangoDB:   http://dev.minichan.org:8529'
 echo '  RabbitMQ:   http://dev.minichan.org:15672'
 echo 'You will have to run webpack, npm, composer manually when changing the corresponding files using'
-echo '  vagrant ssh -c run-npm      # runs npm --no-dist-links install'
+echo '  vagrant ssh -c run-npm      # runs npm --no-bin-links install'
 echo '  vagrant ssh -c run-composer # runs composer install'
 echo '  vagrant ssh -c run-webpack  # runs webpack -d'
 echo '  vagrant ssh -c run-upgrade  # runs php includes/upgrade.php'
