@@ -112,6 +112,7 @@ EOF;
         'Banned in Iran.',
         'We know sad cunts.',
         'Annoyingly elitist.',
+        'Spoilers punishable by death.',
         );
     ?>
 	<h1 class="top_text" id="logo">
