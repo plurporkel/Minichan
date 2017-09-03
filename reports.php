@@ -70,7 +70,7 @@ if ($continue) {
         if ($get['reply']) {
             $topiclink .= '#reply_'.$get['reply'];
         }
-        $topiclink .= "'>".$get['headline'].'</a>';
+        $topiclink .= "'>".htmlspecialchars($get['headline']).'</a>';
 
         $report_info = $get['topic'];
         if ($get['reply']) {
@@ -125,7 +125,7 @@ if ($continue) {
         if ($get['reply']) {
             $topiclink .= '#reply_'.$get['reply'];
         }
-        $topiclink .= "'>".$get['headline'].'</a>';
+        $topiclink .= "'>".htmlspecialchars($get['headline']).'</a>';
 
         $report_info = $get['topic'];
         if ($get['reply']) {
