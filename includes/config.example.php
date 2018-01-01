@@ -37,8 +37,11 @@ define('POSTS_NEEDED_FOR_PROXY_RESTORE', 10);
 define('SITE_ROOT', realpath(dirname(__FILE__).'/..')); // Do not change, things will break.
 define('SITE_TITLE', ''); // The title of your site, shown in the main header among other places.
 
-define('DOMAIN', ($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://localhost/'); // Your site's domain -- INCLUDE TRAILING SLASH!
-define('STATIC_DOMAIN', ($_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://localhost/');
+define('ENABLE_HTTPS', true);
+define('BASE_DOMAIN', 'localhost/'); // Your site's domain -- INCLUDE TRAILING SLASH!
+
+define('DOMAIN', (ENABLE_HTTPS && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://'.BASE_DOMAIN);
+define('STATIC_DOMAIN', (ENABLE_HTTPS && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://'.BASE_DOMAIN);
 define('SESSION_NAME', 'tinybbs');
 define('COOKIE_DOMAIN', '');
 
