@@ -1857,9 +1857,9 @@ function log_mod($action, $target)
 function create_link($url)
 {
     global $link;
-    $link->insert('internal_shorturls', array('url' => $url));
+    $link->insert('internal_shorturls', array('url' => (ENABLE_HTTPS?'https://':'http://').BASE_DOMAIN.$url));
 
-    return DOMAIN.'!'.base_convert($link->insert_id(), 10, 36);
+    return (ENABLE_HTTPS?'https://':'http://').BASE_DOMAIN.'!'.base_convert($link->insert_id(), 10, 36);
 }
 
 function log_irc($message, $staff = false)

@@ -70,11 +70,11 @@ if (!$store_report) {
     $insert['reason'] = substr($_POST['comment'], 0, 512);
     $link->insert('reports', $insert);
 
-    $topiclink = DOMAIN.'topic/'.$insert['topic'];
+    $topiclink = 'topic/'.$insert['topic'];
     if ($insert['reply']) {
         $topiclink .= '#reply_'.$insert['reply'];
     }
-    $handlelink = DOMAIN.'reports/handle/'.$insert['topic'];
+    $handlelink = 'reports/handle/'.$insert['topic'];
     if ($insert['reply']) {
         $handlelink .= '/'.$insert['reply'];
     }

@@ -438,7 +438,7 @@ if ($_POST['form_sent']) {
                     }
 
                     if (!$stealth_banned) {
-                        log_irc('Reply in "'.$replying_to.'" by '.$ircname.' - '.create_link(DOMAIN.'topic/'.$_GET['reply'].'#reply_'.$inserted_id).' - '.trim(snippet($body, 150, false, false)));
+                        log_irc('Reply in "'.$replying_to.'" by '.$ircname.' - '.create_link('topic/'.$_GET['reply'].'#reply_'.$inserted_id).' - '.trim(snippet($body, 150, false, false)));
                     }
                 }
                 unset($insert);
@@ -594,7 +594,7 @@ if ($_POST['form_sent']) {
                     if (!$stealth_banned) {
                         topic_notification($headline, $ircname, snippet($body), DOMAIN.'topic/'.$inserted_id);
 
-                        log_irc('Topic "'.$headline.'" by '.$ircname.' - '.create_link(DOMAIN.'topic/'.$inserted_id).' - '.trim(snippet($body, 150, false, false)));
+                        log_irc('Topic "'.$headline.'" by '.$ircname.' - '.create_link('topic/'.$inserted_id).' - '.trim(snippet($body, 150, false, false)));
                     }
 
                     //$link->db_exec("INSERT INTO poll_options
