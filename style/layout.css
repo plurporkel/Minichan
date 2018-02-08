@@ -4,6 +4,7 @@ body {
     padding-top:0;
     padding:0 1em;
     margin:0px;
+    text-decoration-skip-ink:none;
 }
 
 :focus {
