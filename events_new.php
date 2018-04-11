@@ -89,7 +89,7 @@ function post_event($id = -1)
     if (strlen($addr) > 256) {
         $addr = substr(0, 256, $addr);
     }
-    if (!preg_match('#^http://#', $addr) && $addr) {
+    if (!preg_match('#^https?://#', $addr) && $addr) {
         $addr = 'http://'.$addr;
     }
     $addr = mysql_real_escape_string($addr, $link->getLink());
