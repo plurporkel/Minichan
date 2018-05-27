@@ -1,7 +1,7 @@
 ![](http://i.imgur.com/8SZWa2h.gif)
 
 
-#Installation
+# Installation
 * Install dependencies with [composer](https://getcomposer.org/doc/00-intro.md) using `composer install`
 * Install client-side dependencies with [npm](https://www.npmjs.com/) using `npm install`
 * Install webpack `npm install -g webpack`
@@ -31,7 +31,7 @@ It is also possible to use nginx, and a sample `rewrite.conf` is available, but 
 
 When deploying to production use `webpack -p`.
 
-#Updating
+# Updating
 Update your working tree (git pull?) and run the following commands. See the wiki for scripts used by http://minichan.org
 
 ```bash
@@ -41,12 +41,12 @@ webpack -p
 php includes/upgrade.php
 ```
 
-#"Support"
+# "Support"
 If you have any questions you can try your luck on the issue tracker or `##minichan @ irc.freenode.net`. Note that development is primarily geared towards running a functional [http://minichan.org](http://minichan.org) so your feature requests may not be a priority. Pull requests are welcome if they are discussed on the issue tracker or IRC (with r04r) first.
 
 And yes. The code is shit. :-)
 
-#Branches
+# Branches
 This repository consists of four primary branches, of which all but `master` may have their histories rewritten at any time:
 
 * `master`: The main development branch. The code on this branch should work, but may not be fully functional or stable when development is happening. If you intend to submit pull requests base them off of this branch.
