@@ -256,7 +256,5 @@ if (!MOBILE_MODE) {
     <div style='position: absolute; top: 0; right: 0;'>
     <a href='javascript:confirm("Spread the word to your facebook friends? (This will post a link on their walls)")'><img src="//minichan.org/img/spread.png" /></a>
     </div>
-    <?php
-} ?>
 </body>
 </html>
