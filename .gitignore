@@ -12,6 +12,7 @@ db.log
 /bin
 /node_modules/
 /includes/stats.json
+/includes/private.php
 *.tmp
 .idea
 *.log
