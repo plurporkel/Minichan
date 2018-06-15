@@ -7,15 +7,17 @@ if ($_POST['drop_ID']) {
     check_token();
     unset($_SESSION['UID']);
     unset($_SESSION['ID_activated']);
-    setcookie('UID', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
-    setcookie('password', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
-    setcookie('topics_mode', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
-    setcookie('spoiler_mode', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
-    setcookie('snippet_length', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+    //setcookie('UID', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+    //setcookie('password', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+    //setcookie('topics_mode', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+    //setcookie('spoiler_mode', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+    //setcookie('snippet_length', '', $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+	
+	foreach($_COOKIE as $k=>$v) {
+		setcookie($k, null, $_SERVER['REQUEST_TIME'] - 3600, '/', COOKIE_DOMAIN);
+	}
+	
     session_destroy();
-    session_name('SID');
-    session_start();
-    $_SESSION['notice'] = 'Your ID has been dropped.';
     header('Location: /');
     die();
 }

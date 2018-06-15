@@ -65,13 +65,24 @@ if (!defined('ENABLE_CACHE')) {
     session_cache_limiter('private_no_expire');
 }
 
+require 'includes/useragents.php';
+define('MOBILE_MODE', check_user_agent('mobile'));
+
+if(isset($_POST['i_accept_cookies']) && $_POST['i_accept_cookies']) {
+	setcookie('i_accept_cookies', '1', $_SERVER['REQUEST_TIME'] + 315569260, '/', COOKIE_DOMAIN);
+	$_COOKIE['i_accept_cookies'] = 1;
+}
+
+if((!isset($_COOKIE['i_accept_cookies']) || !$_COOKIE['i_accept_cookies']) && !check_user_agent('bot')) {
+	require('includes/gdpr.php');
+	die();
+}
+
 session_name('SID');
 session_start();
 
 require_once 'includes/ChromePhp.php';
 Console::useFile(SITE_ROOT.'/tmp', '/tmp');
-require 'includes/useragents.php';
-define('MOBILE_MODE', check_user_agent('mobile'));
 
 function abortForMaintenance($error)
 {

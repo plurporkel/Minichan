@@ -64,6 +64,8 @@ EOF;
             }
 
             echo $additional_head;
+			
+			if(defined('GOOGLE_ANALYTICS_ID')) {
         ?>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
@@ -81,6 +83,7 @@ EOF;
 		</script>
 </head>
 	<?php
+			}
         echo '<body';
         if (!empty($onload_javascript)) {
             echo ' onload="'.$onload_javascript.'"';
@@ -232,13 +235,8 @@ EOF;
     ?></div><div style="display:block;clear: both">
 
 <?php
-// DO NOT REMOVE THE FOOTER OR DONATION LINK YOU FUCKING PSYCHO TROLLS.
-// The footer starts here.
-// $donationlink = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7P4QPNBZJ4R7N&lc=GB&item_name=TinyBBS&item_number=TinyBBS%20Donation&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" alt="Donate" target="_new">donate</a>';
 // echo sprintf('<hr style="height:1px;border-width:0;color:gray;background-color:gray" /><span class="unimportant">Powered by <a href="http://tinybbs.org" target="_new">TinyBBS</a> open source software. %s This page took %.5f seconds to be generated.</span>', $donationlink, ($e0+$e1)-($s0+$s1));
 if (!MOBILE_MODE) {
-    // echo sprintf('<span class="unimportant">All trademarks and copyrights on this site are owned by their respective parties. Images and comments are the responsibility of the posters. %s This page took %.5f seconds to be generated.', $donationlink, ($e0+$e1)-($s0+$s1));
-
     // Generation time-n-RAM usage.
     if ($administrator) {
         function humanize_bytes($size)
@@ -255,38 +253,10 @@ if (!MOBILE_MODE) {
 ?>
 		<noscript><br /><span class="unimportant">Note: Your browser's JavaScript is disabled; some site features may not fully function.</span></noscript>
 	</div>
-    <?php if ($administrator && false) { // http://minichan.org/facebook/spread.php ?>
     <div style='position: absolute; top: 0; right: 0;'>
     <a href='javascript:confirm("Spread the word to your facebook friends? (This will post a link on their walls)")'><img src="//minichan.org/img/spread.png" /></a>
     </div>
     <?php
 } ?>
-
-<!--
-<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1" height="1">
-  <param name="movie" value="http://breadfish.de/img/breadfish.swf" id="toonURL1"><param name="quality" value="high"><embed src="http://breadfish.de/img/breadfish.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1" height="1"  id="toonURL2"></embed></object>
--->
-<!-- <div style="position: fixed; width:1px; height:1px; left:100px;top:200px;background-color:blue;z-index:1000"></div> -->
-<div id="fb-root"></div>
-<?php /*
-<div style='width:1px;height:1px;background-color:black;position:fixed;left:300px;top:50px;cursor:default'></div>
-<script>
-$(document).ready(function() {
-    var w = $(window).width();
-    var h = $(window).height();
-
-    function getRandomInt (min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    setInterval(function() {
-        var elem = $("<div style='width:1px;height:1px;background-color:black;position:fixed;cursor:default'></div>");
-        elem.css('left', getRandomInt(0, w) + 'px');
-        elem.css('top', getRandomInt(0, h) + 'px');
-        $('body').append(elem);
-    }, 5000);
-});
-</script>
-*/ ?>
 </body>
 </html>

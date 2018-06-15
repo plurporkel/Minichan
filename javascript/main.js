@@ -1,7 +1,7 @@
 require("../style/layout.css");
 
 import 'babel-polyfill';
-import Fingerprint from './fingerprint.js'
+//import Fingerprint from './fingerprint.js'
 import $ from 'jquery';
 window.$ = window.jQuery = $;
 require('./extras.js');
@@ -486,7 +486,7 @@ function init() {
 	});
 	highlightReplyFromHash();
 	window['UID'] = getCookie("UID");
-	if(!getCookie('fp')) setCookie('fp', new Fingerprint({canvas: true}).get(), 7);
+	//if(!getCookie('fp')) setCookie('fp', new Fingerprint({canvas: true}).get(), 7);
 	$("form").submit(function() {
 		var $inputs = $("input, button, textarea", this);
 		setTimeout(function() {

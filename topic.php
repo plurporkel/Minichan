@@ -858,7 +858,7 @@ list($setName) = $link->fetch_row();
         ?>
 		<input type="submit" name="preview" tabindex="6" value="Preview" class="inline" /> 
 		<input type="submit" name="post" tabindex="4" value="Post" class="inline">
-		<p>Please familiarise yourself with the <a href="<?php echo DOMAIN; ?>rules" target="_blank">rules</a> and <a href="<?php echo DOMAIN; ?>markup_syntax" target="_blank">markup syntax</a> before posting, also keep in mind you can minify URLs using <a href="<?php echo DOMAIN; ?>link" target="_blank">MiniURL</a> and generate image macros using <a href="<?php echo DOMAIN; ?>macro" target="_blank">MiniMacro</a>.</p>
+		<p>Please familiarise yourself with the <a href="<?php echo DOMAIN; ?>rules" target="_blank">rules</a> and <a href="<?php echo DOMAIN; ?>markup_syntax" target="_blank">markup syntax</a> before posting.</p>
 	</form>
     <input style="visibility: hidden; width: 0px; height: 0px;" type="file" id="imgurupload" onchange="uploadImage(this.files[0])"> 
 </div>

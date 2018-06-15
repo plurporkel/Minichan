@@ -17,6 +17,8 @@ $page_title = 'Stuff';
 		<li><a href="<?php echo DOMAIN; ?>recover_ID_by_email">Recover ID by e-mail</a></li>
 		<li><a href="<?php echo DOMAIN; ?>generate_ID_card">Download ID card</a></li>
 		<li><a href="<?php echo DOMAIN; ?>drop_ID">Drop ID</a> — <span class="unimportant">Log out.</span></li>
+		<li><a href="<?php echo DOMAIN; ?>drop_ID">Change cookie settings</a></li>
+		<li><a href="<?php echo DOMAIN; ?>gdpr">GDPR information</a></li>
 	</ul>
 </div>
 <div style="float: right; width: 50%;">
@@ -29,11 +31,9 @@ $page_title = 'Stuff';
 	</ul>
 	<ul class="stuff">
 		<li><strong><a href="<?php echo DOMAIN; ?>chat">Chat (IRC)</a></strong> — <span class="unimportant">Have some biscuits and tea.</span></li>
-<!--		<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=7P4QPNBZJ4R7N&amp;lc=GB&amp;item_name=TinyBBS&amp;item_number=TinyBBS%20Donation&amp;currency_code=USD&amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted" alt="Donate" target="_new">Donate</a> — <span class="unimportant">Contribute towards the site costs.</span></li> -->
 		<li><a href="<?php echo DOMAIN; ?>compose_message/mods">Contact</a> — <span class="unimportant">Send a personal message to the mod(s).</span></li>
 		<li><strong><a href="<?php echo DOMAIN; ?>addons">Add-ons</a></strong> — <span class="unimportant">Add-ons, ready to take over the world.</span></li>
 		<li><strong><a href="<?php echo DOMAIN; ?>push">HTML5 Push Notifications</a></strong> — <span class="unimportant">Be there. Always.</span></li>
-		<li><strong><a href="<?php echo DOMAIN; ?>link">MiniURL</a></strong> — <span class="unimportant">Minify links</span></li>
 		<li><strong><a href="<?php echo DOMAIN; ?>triptest">Tripcode Tester</a></strong> — <span class="unimportant">Test your tripcodes</span></li>
 		<?php
         if (MOBILE_MODE) {

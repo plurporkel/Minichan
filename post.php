@@ -889,7 +889,7 @@ if (!MOBILE_MODE) {
             recaptcha_inline();
         }
         ?>
-			<p>Please familiarise yourself with the <a href="<?php echo DOMAIN; ?>rules" target="_blank">rules</a> and <a href="<?php echo DOMAIN; ?>markup_syntax" target="_blank">markup syntax</a> before posting, also keep in mind you can minify URLs using <a target="_blank" href="<?php echo DOMAIN; ?>link">MiniURL</a> and generate image macros using <a target="_blank" href="<?php echo DOMAIN; ?>macro">MiniMacro</a>.</p>
+			<p>Please familiarise yourself with the <a href="<?php echo DOMAIN; ?>rules" target="_blank">rules</a> and <a href="<?php echo DOMAIN; ?>markup_syntax" target="_blank">markup syntax</a> before posting.</p>
 		</div>
 		<?php
         if (!$watching_topic) {
