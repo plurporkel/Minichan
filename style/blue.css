@@ -10,7 +10,7 @@ body {
     background-color:#e7f4ff;
 }
 
-#logo { display:none; } body { padding:1em 1em 0 1em; }
+body { padding:1em 1em 0 1em; }
 
 .body {
     background-color:#bce0ff;

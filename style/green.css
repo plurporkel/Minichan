@@ -362,10 +362,6 @@ h3#preview,h3#error,h3#replying_to,label,legend,.topic_headline a,.reply_body_sn
 		width:99%;
 }
 
-#logo {
-		display:none;
-}
-
 a.video {
 		padding:0px;
 		-webkit-box-shadow:inset 0px 0px 0px rgba(0,0,0,0.35)!important;

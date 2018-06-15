@@ -120,18 +120,16 @@ EOF;
     ?>
 	<h1 class="top_text" id="logo">
 		<?php
-            if ($administrator || allowed('manage_defcon')) {
-                if (DEFCON < 5) {
-                    $additional = ' - <a href="'.DOMAIN.'defcon" title="Manage defcon status.">DEFCON</a> '.DEFCON;
-                } else {
-                    $additional = '';
-                }
-            } else {
-                $additional = '';
-            }
-            echo '<a rel="index" href="'.DOMAIN.'" class="help_cursor" title="'.$site_slogan[rand(0, count($site_slogan) - 1)].'">'.SITE_TITLE.$additional."</a>\n"
+			echo '<a rel="index" href="'.DOMAIN.'" class="help_cursor" title="'.$site_slogan[rand(0, count($site_slogan) - 1)].'">'.SITE_TITLE."</a>\n";
          ?>
 	</h1>
+	<?php
+		if ($administrator || allowed('manage_defcon')) {
+			if (DEFCON < 5) {
+				echo '<h1><a href="'.DOMAIN.'defcon" title="Manage defcon status.">DEFCON</a> '.DEFCON.'</h1>';
+			}
+		}
+	?>
 <div id="main_menu_wrapper">
 	<ul id="main_menu" class="menu">
 		<?php
