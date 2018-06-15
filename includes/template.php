@@ -253,8 +253,5 @@ if (!MOBILE_MODE) {
 ?>
 		<noscript><br /><span class="unimportant">Note: Your browser's JavaScript is disabled; some site features may not fully function.</span></noscript>
 	</div>
-    <div style='position: absolute; top: 0; right: 0;'>
-    <a href='javascript:confirm("Spread the word to your facebook friends? (This will post a link on their walls)")'><img src="//minichan.org/img/spread.png" /></a>
-    </div>
 </body>
 </html>
