@@ -3,6 +3,7 @@
 # So...
 
 On Oct 23 2020 @sardachywy wrote:
+
 It's obvious that the code it's outdated nowadays. I hope someone take care of this in the future.
 
 For now this is what I did to get running minichan:
