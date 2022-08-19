@@ -1,6 +1,6 @@
 ![](http://i.imgur.com/8SZWa2h.gif)
 
-#So...
+# So...
 
 On Oct 23 2020 @sardachywy wrote:
 It's obvious that the code it's outdated nowadays. I hope someone take care of this in the future.
