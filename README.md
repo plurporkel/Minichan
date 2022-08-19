@@ -1,5 +1,17 @@
 ![](http://i.imgur.com/8SZWa2h.gif)
 
+#So...
+
+On Oct 23 2020 @sardachywy wrote:
+It's obvious that the code it's outdated nowadays. I hope someone take care of this in the future.
+
+For now this is what I did to get running minichan:
+
+    Install webpack 1.13.2 (npm install -g webpack@^1.13.2)
+    Use PHP 5.6
+    Disable strict mode inMySQL (in your my.cnf, add bellow [mysqld]: sql_mode=NO_ENGINE_SUBSTITUTION)
+
+I am using mariadb, so i dont know if exist any other compatibility issues with the new MySQL 8.
 
 # Installation
 * Install dependencies with [composer](https://getcomposer.org/doc/00-intro.md) using `composer install`
